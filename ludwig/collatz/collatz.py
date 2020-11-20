@@ -1,3 +1,4 @@
+import multiprocessing
 from termcolor import colored
 from sys import argv
 from os import getpid, path, mkdir
@@ -26,26 +27,40 @@ def collatz_steps(i:int) -> int:
         else: i = 3 * i + 1
     return steps
 
-def mp_list_collatz_steps(input:list):
+def mp_list_collatz_steps(input:list) -> dict:
     print(f'Starting process {getpid()}...')
-    result = []
-    for i in input: result.append(collatz_steps(i))
+    result = {}
+    for i in input: result[i] = collatz_steps(i)
+    return result
+
+def mp_amount_list_collatz_steps(input:list) -> dict:
+    print(f'Starting process {getpid()}...')
+    result = {}
+    for i in input:
+        tmp_result = collatz_steps(i)
+        if tmp_result in result.keys(): result[tmp_result] += 1
+        else: result[tmp_result] = 1
     return result
 
 def collatz_diagram_step(input:int, bar:bool=True):
     print(colored(f'Calculating collatz steps until {input}...', 'blue'))
 
-    x = range(1, input + 1)
-    y = []
+    crange = list(range(1, input + 1))
+    arrays = []
+    cpu_count = multiprocessing.cpu_count()
+    for _ in range(cpu_count):
+        arrays.append(crange[::cpu_count])
+        crange.pop(0)
+    
+    result = Pool().map(mp_list_collatz_steps, arrays)
+    arrays = None
+    values = {}
+    for dict in result: values = {**values, **dict}
+    result = None
+    values = sorted_dict(values)
 
-    crange = range(1, input + 1)
-    arrays = array_split(np_array(crange), cpu_count())
-    pool = Pool()
-    result = pool.map(mp_list_collatz_steps, arrays)
-    for array in result: y.extend(array)
-
-    if(bar): pyplot.bar(x, y)
-    else: pyplot.plot(x, y)
+    if(bar): pyplot.bar(values.keys(), values.values())
+    else: pyplot.plot(values.keys(), values.values())
 
     pyplot.title(f'Collatz-Schrittanzahl bis {input}')
     pyplot.ylabel('Schrittanzahl')
@@ -67,15 +82,20 @@ def collatz_diagram_step(input:int, bar:bool=True):
 def collatz_amount_diagram_step(input:int, bar:bool=True):
     print(colored(f'Calculating amount of collatz steps for numbers until {input}...', 'blue'))
     
-    crange = range(1, input + 1)
-    arrays = array_split(np_array(crange), cpu_count())
-    pool = Pool()
-    result = pool.map(mp_list_collatz_steps, arrays)
+    crange = list(range(1, input + 1))
+    arrays = []
+    cpu_count = multiprocessing.cpu_count()
+    for _ in range(cpu_count):
+        arrays.append(crange[::cpu_count])
+        crange.pop(0)
+
+    result = Pool().map(mp_amount_list_collatz_steps, arrays)
     values = {}
-    for array in result:
-        for i in array:
-            if i in values.keys(): values[i] += 1
-            else: values[i] = 1
+    for dict in result:
+        for key, value in dict.items():
+            if key in values.keys(): values[key] += value
+            else: values[key] = value
+    result = None
     values = sorted_dict(values)
 
     if bar: pyplot.bar(values.keys(), values.values())
@@ -90,7 +110,7 @@ def collatz_amount_diagram_step(input:int, bar:bool=True):
     else: img_name = f'collatz-img-2-plot-{input}.png'
 
     if not path.isdir('img'):
-        print('creating directory \'img\'...')
+        print('Creating directory \'img\'...')
         mkdir('img')
 
     print(colored(f'Rendering image \'{img_name}\' with dpi {get_dpi(input)}...', 'blue'))
@@ -104,8 +124,8 @@ def print_usage():
 if __name__ == '__main__':
     if len(argv) == 1: print_usage()
     elif len(argv) == 2 and argv[1].lower() == 'template':
-        for i in range(3, 10): 
-            collatz_diagram_step(10 ** i)
+        #for i in range(3, 10): 
+        #    collatz_diagram_step(10 ** i)
         for i in range(3, 10): 
             collatz_amount_diagram_step(10 ** i)
     elif len(argv) == 4:
