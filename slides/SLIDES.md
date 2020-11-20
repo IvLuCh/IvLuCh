@@ -4,10 +4,6 @@ author: Iven, Ludwig & Chris
 ---
 <!--theme: Copenhagen-->
 
-# lulw
+# Test
 
-Dies ist die erste fOlIe
-
-# kekw
-
-hallo
+Dies ist die erste Folie
