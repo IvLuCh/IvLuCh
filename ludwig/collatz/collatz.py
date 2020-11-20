@@ -1,3 +1,4 @@
+from termcolor import colored
 from sys import argv
 from os import getpid, path, mkdir
 from numpy import array as np_array, array_split
@@ -32,11 +33,7 @@ def mp_list_collatz_steps(input:list):
     return result
 
 def collatz_diagram_step(input:int, bar:bool=True):
-    if input < 1:
-        print('invalid input!')
-        return
-    
-    print(f'calculating collatz steps until {input}...')
+    print(colored(f'Calculating collatz steps until {input}...', 'blue'))
 
     x = range(1, input + 1)
     y = []
@@ -59,20 +56,16 @@ def collatz_diagram_step(input:int, bar:bool=True):
     else: img_name = f'collatz-img-1-plot-{input}.png'
 
     if not path.isdir('img'):
-        print('creating directory \'img\'...')
+        print('Creating directory \'img\'...')
         mkdir('img')
 
-    print(f'rendering image \'{img_name}\' with dpi {get_dpi(input)}...')
+    print(colored(f'Rendering image \'{img_name}\' with dpi {get_dpi(input)}...', 'blue'))
     pyplot.savefig(f'img/{img_name}', dpi=get_dpi(input))
-    print('finished rendering!')
+    print(colored('Finished rendering!', 'green'))
 
 
 def collatz_amount_diagram_step(input:int, bar:bool=True):
-    if input < 1:
-        print('invalid input!')
-        return
-    
-    print(f'calculating collatz amount steps until {input}...')
+    print(colored(f'Calculating amount of collatz steps for numbers until {input}...', 'blue'))
     
     crange = range(1, input + 1)
     arrays = array_split(np_array(crange), cpu_count())
@@ -100,9 +93,9 @@ def collatz_amount_diagram_step(input:int, bar:bool=True):
         print('creating directory \'img\'...')
         mkdir('img')
 
-    print(f'rendering image {img_name} with dpi {get_dpi(input)}...')
+    print(colored(f'Rendering image \'{img_name}\' with dpi {get_dpi(input)}...', 'blue'))
     pyplot.savefig(f'img/{img_name}', dpi=get_dpi(input))
-    print('finished rendering!')
+    print(colored('Finished rendering!', 'green'))
 
 
 def print_usage():
