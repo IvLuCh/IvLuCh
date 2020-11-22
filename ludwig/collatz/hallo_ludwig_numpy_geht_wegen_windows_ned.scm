@@ -1,3 +1,5 @@
+#!/usr/bin/env scheme-script
+
 (define (collatz_steps i) (
     if (< i 2) 0
     (+ 1 (collatz_steps
@@ -7,12 +9,14 @@
     ))
 ))
 
-(define out (open-output-file "collatz-10mio.sc"))
+(define out (open-output-file "collatz-10mio.scm"))
 
 (define (collatz_ehre i)
     (display (map collatz_steps (iota i)) out)
     (newline out)
 )
 
-(collatz_ehre 10000000)
-(close-output-port out)
+(define (main x)
+    (collatz_ehre 10000000)
+    (close-output-port out)
+)
