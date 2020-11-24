@@ -8,9 +8,9 @@
 
 ## Ludwig
 * Collatz
-* Teilen durch 0
+* Probleme mit 0
 * Primzahlen
-* Teilungsverhältnisse
+* Riemann'sche Vermutung
 
 ## Chris – Überthema: Unendlichkeit
 * modulo & Kongruenz
