@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Fibonacci Folge</title>
+
+		<link rel="stylesheet" href="reveal.js/css/reset.css">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<style>
+			li {
+				font-size:23px;
+			}
+			.st p {
+				font-size:22px;
+			}
+			.st blockquote {
+				font-size: 22px;
+			}
+		</style>
+		<div class="reveal">
+			<div class="slides">
+					<section data-auto-animate>
+						<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
+					</section>
+					<section data-auto-animate>
+						<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
+						<ul>
+							<li class="fragment">Namensgeber: Leonardo von Pisa, gennant Fibonacci</li>
+							<li class="fragment">Beschrieb mit ihr 1202 das Wachstum einer Kaninchenpopulation</li>
+							<li class="fragment">Unendliche Folge natürlicher Zahlen 
+									\[\begin{align}
+									{0, 1, 1, 2, 3, 5, 8, 13, 21, 24, 55, 89, ...}
+									\end{align}\]
+							</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<h3 data-id="fib-h3-1">Mathematische Besonderheiten</h3>
+						<ul style="list-style-type:none;">
+							<li class="fragment">Die Summe zweier aufeinanderfolgender Zahlen ergibt die unmittelbar danach folgende Zahl
+									\[\begin{align}
+									0+1=1;1+1=2;1+2=3;2+3=5;3+5=8
+									\end{align}\]
+							</li>
+							<li class="fragment">Der Quotient zweier, aufeinanderfolgender Zahlen nähert sich dem goldenen Schnitt an.
+								\[\begin{align}
+								\frac{13}{8}=1,6250; \frac{21}{13}=1,61538461538\approx\Phi
+								\end{align}\]
+							</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<h3 data-id="fib-h3-1">Allgemeine Besonderheiten</h3>
+						<img src="img/spiral.png" style="float:left;"></img>
+						<ul style="float:left; margin-top: 20px;">
+							<li style="font-size:30px;">Wachstumsverhältnisse in der Natur</li>
+							<li style="font-size:30px;">Anzahl v. Spiralen in Blättern u. Früchten<br/>im Beispiel: 13 Rote u. 8 Grüne Spiralen</li>
+						</ul>
+					</section>
+			</div>
+		</div>
+		<script src="reveal.js/js/reveal.js"></script>
+		<script src="reveal.js/plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+    			math: {
+      				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+      				config: 'TeX-AMS_HTML-full',
+      				// pass other options into `MathJax.Hub.Config()`
+      				TeX: { Macros: { RR: "{\\bf R}" } }
+    			},
+    			plugins: [ RevealMath ]
+  			});
+		</script>
+	</body>
+</html>
