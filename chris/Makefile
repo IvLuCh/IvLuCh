@@ -1,5 +1,5 @@
 all:
-	pandoc NOTES.md -o notes.html
+	pandoc NOTES.md --mathjax -o notes.html
 
 test: all
 	brave-browser notes.html

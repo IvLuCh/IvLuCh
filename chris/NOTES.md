@@ -10,7 +10,7 @@
 &DownArrow;  
 größer als jede n &Element; &naturals;  
 jede n ist auch eine Ord  
-TODO: wer hat sich des ausgedacht?  
+Peano-Axinome schenken wir uns, aber John von Neumann hat gesagt:  
 0 = {}  
 1 = {0} = {{}}  
 2 = {0, 1} = {{}, {{}}}  
@@ -28,8 +28,46 @@ n = {0, 1, …, n - 1}
 &sigma; + &tau; = 3 = {0, 1, 2}
 
 ### Disjunkt machen
-&tau; so *umschreiben* (?), dass für alle Elemente t &Element; &tau;,
-s &Element; &sigma; gilt: s < t
+&tau; so *umschreiben* (?), dass für alle Elemente t &isin; &tau;'
+gilt: t &notin; &sigma;
 
 ### Anhängen
 &tau; hinten an &sigma; anhängen.
+
+### Test 1
+
+&sigma; = {0}  
+&tau; = {0, 1}  
+&tau;' = {1, 2} (?)  
+&sigma; + &tau; = {0, 1, 2}  
+
+### Test 2
+
+&sigma; = {0, 1, 2, 3}  
+&tau; = {0, 1}  
+&sigma; + &tau; = {0, 1, 2, 3, 4, 5}  
+&tau;' = {4, 5}
+
+⇒ WTF?!
+
+## Mengen addieren, aber wirklich
+
+ich versteh des immer noch ned und find den englischen wikipedia
+eintrag auch nimmer
+
+# Basics
+
+## modulo
+
+Teilungsrest: 3 mod 2 = 1
+
+## Kongruenz
+
+Einfachere Schreibweise für x mod n = y mod n:  
+x ≡ y (mod n)
+
+## Summe
+
+&Sigma;
+
+$ \sum\limits_{n=1}^{3} n $
