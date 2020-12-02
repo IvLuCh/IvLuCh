@@ -1,21 +1,64 @@
+---
+title: Heute wieder Notizen machen, gar kein Bock.
+---
+
+# Peano-Axinome
+Axinom: grundlegende Aussage, die als gegeben angesehen wird
+
+1. $$ 0 \in \mathbb{N} $$
+
+$$ \forall n (n \in \mathbb{N}) $$
+
+2. $$ n' \in \mathbb{N} $$
+3. $$ n' \ne 0 $$
+
+$$ \forall n, m (n, m \in \mathbb{N}) $$
+
+4. $$ m' = n' \Rightarrow m = n $$
+
+$$ \forall \chi (0 \in \chi) $$ und
+$$ (n \in \chi \Rightarrow n' \in \chi) $$
+
+5. $$ \chi \subseteq \mathbb{N} $$
+
 # Ordinalzahlen
 
 „1 ist die **erste** &naturals;“  
 &naturals; = {1, 2, …}  
 &naturals;[1] = 1  
 &naturals; ist schon unendlich  
+jede n ist auch eine Ord  
 „&omega; > &infin;“ (falsch, aber naja)  
 &omega; = &naturals;  
 &omega;: kleinste **transfinite** Ordinalzahl  
 &DownArrow;  
 größer als jede n &Element; &naturals;  
-jede n ist auch eine Ord  
-Peano-Axinome schenken wir uns, aber John von Neumann hat gesagt:  
+
+## Ord definieren
+
+$$
+ord(n) =
+\begin{cases}
+\{\}       & \quad \text{wenn } n = 0\\
+ord(n - 1) \cup \{ord(n - 1)\}  & \quad \text{wenn } n > 0
+\end{cases}
+$$
+
+
 0 = {}  
 1 = {0} = {{}}  
 2 = {0, 1} = {{}, {{}}}  
 …  
 n = {0, 1, …, n - 1}
+
+```scm
+(define (ord n)
+  (if (= n 0) '()
+    (append
+      (ord (- n 1))
+      (list (ord (- n 1)))
+)))
+```
 
 ## Rechnen mit Mengen
 
@@ -63,11 +106,20 @@ Teilungsrest: 3 mod 2 = 1
 
 ## Kongruenz
 
-Einfachere Schreibweise für x mod n = y mod n:  
-x ≡ y (mod n)
+Einfachere Schreibweise für
+
+$$ x\ \textrm{mod}\ n = y\ \textrm{mod}\ n $$
+
+$$ x \equiv y\ (\textrm{mod}\ n) $$
 
 ## Summe
 
-&Sigma;
+$$ \sum_{n=k}^{m} f(n) = f(k) + f(k + 1) + ... + f(m) $$
 
-$ \sum\limits_{n=1}^{3} n $
+```c
+for(int n = k; n <= m; n++)
+```
+
+$$ \sum_{n=1}^{3} n = 6 $$
+
+$$ \sum_{n=1}^{\infty} 2^{-n} = 1 $$
