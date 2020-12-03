@@ -52,6 +52,8 @@ $$ (n \in \chi \Rightarrow n' \in \chi) $$
 
 5. $$ \chi \subseteq \mathbb{N} $$
 
+# Hilberts Hotel & Probleme des Unendlichen
+
 # Ordinalzahlen
 
 „1 ist die **erste** &naturals;“  

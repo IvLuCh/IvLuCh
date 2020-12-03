@@ -1,19 +1,13 @@
 # Themen und später auch noch Reihenfolge
 
-## Iven
-* Fibonacci
-* Goldener Schnitt
-* Minimalfläche
-* Kürzeste Verbindungen im ein- & mehrdimensionalen Raum
-
-## Ludwig
-* Collatz
-* Probleme mit 0
-* Primzahlen
-* Riemann'sche Vermutung
-
-## Chris
-* modulo & Kongruenz
-* Hilberts Hotel & Probleme des Unendlichen
-* Ordinalzahlen
-* Peano-Axinome
+* Basics (xx)
+* Collatz (Ludewig)
+* Kürzeste Verbindungen im ein- & mehrdimensionalen Raum (IIIven)
+* Hilberts Hotel & Probleme des Unendlichen (xx)
+* Probleme mit 0 (Ludus)
+* Fibonacci & Goldener Schnitt (Wayne)
+* Peano-Axinome (xx)
+* Ordinalzahlen (chrissx häußler)
+* Minimalfläche (Wofl)
+* Primzahlen (spiel)
+* Riemannsche Vermutung (buch)
