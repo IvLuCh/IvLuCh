@@ -1,19 +1,13 @@
 # Themen und später auch noch Reihenfolge
 
-## Iven
-* Fibonacci
-* Goldener Schnitt
-* „Analoge Taschenrechner“
-<!--TODO: iven gönn dir noch nen thema-->
-
-## Ludwig
-* Collatz
-* Probleme mit 0
-* Primzahlen
-* Riemann'sche Vermutung
-
-## Chris – Überthema: Unendlichkeit
-* modulo & Kongruenz
-* Hilberts Hotel & Probleme des Unendlichen
-* Ordinalzahlen
-<!--ich glaub ich brauch noch eins, right?-->
+* Basics (xx)
+* Collatz (Ludewig)
+* Kürzeste Verbindungen im ein- & mehrdimensionalen Raum (IIIven)
+* Hilberts Hotel & Probleme des Unendlichen (xx)
+* Probleme mit 0 (Ludus)
+* Fibonacci & Goldener Schnitt (Wayne)
+* Peano-Axinome (xx)
+* Ordinalzahlen (chrissx häußler)
+* Minimalfläche (Wofl)
+* Primzahlen (spiel)
+* Riemannsche Vermutung (buch)

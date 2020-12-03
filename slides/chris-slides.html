@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Iven ist ein Kek</title>
+
+	<link rel="stylesheet" href="reveal.js/css/reset.css">
+	<link rel="stylesheet" href="reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<style>
+		li {
+			font-size: 23px;
+		}
+
+		.st p {
+			font-size: 22px;
+		}
+
+		.st blockquote {
+			font-size: 22px;
+		}
+	</style>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Modulo</h3>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Modulo</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Teilungsrest: $ 3 : 2 = 1\textrm{R}1 $</li>
+					<li class="fragment">$ 3\ \textrm{mod}\ 2 = 1 $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Kongruenz</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Ausführlich: $ x\ \textrm{mod}\ n = y\ \textrm{mod}\ n $</li>
+					<li class="fragment">$ x \equiv y\ (\textrm{mod}\ n) $</li>
+					<li class="fragment">$ 3 \equiv 5\ (\textrm{mod}\ 2) $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Summe</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Ausführlich: $ f(k) + f(k + 1) + \ldots + f(m) $</li>
+					<li class="fragment"><pre><code data-trim class="c">
+						for(int n = k; n &lt;= m; n++)
+					</code></pre></li>
+					<li class="fragment">$ \sum\limits_{n=k}^{m} f(n) $</li>
+					<li class="fragment">$ \sum\limits_{n=1}^{3} n = 1 + 2 + 3 = 6 $</li>
+					<li class="fragment">$ \sum\limits_{n=1}^{\infty} 2^{-n}
+						= \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots = 1 $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Peano-Axinome</h3>
+				<ul style="list-style-type: none;float: left;">
+					<li class="fragment">Axinom: grundlegende Aussage, die als gegeben angesehen wird</li>
+					<li class="fragment">Peano hat die Menge der Natürlichen Zahlen definiert:</li>
+					<ul style="list-style-type: decimal;">
+						<li class="fragment">$ 0\in \mathbb {N} $</li>
+						<li class="fragment">$ \forall n(n\in \mathbb {N} \Rightarrow n'\in \mathbb {N} ) $</li>
+						<li class="fragment">$ \forall n(n\in \mathbb {N} \Rightarrow n'\not =0 ) $</li>
+						<li class="fragment">$ \forall n,m(n,m\in \mathbb {N} \Rightarrow (m'=n'\Rightarrow m=n)) $</li>
+						<li class="fragment">$ \forall X(0\in X\land \forall n(n\in \mathbb {N} \Rightarrow (n\in X\Rightarrow n'\in X))\Rightarrow \mathbb {N} \subseteq X) $</li>
+					</ul>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">„1 ist die <b>erste</b> &naturals;“</li>
+					<li class="fragment">Jede natürliche Zahl ist auch eine Ordinalzahl,</li>
+					<li class="fragment">die Ordinalzahlen gehen aber noch darüber hinaus.</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen nach von Neumann</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Man nehme einfach alle Zahlen aus der Mathematik weg.</li>
+					<li class="fragment">Was bleibt übrig?</li>
+					<li class="fragment">Die leere Menge.</li>
+					<li class="fragment">$ 0 = \{\} $</li>
+					<li class="fragment">$ 1 = \{0\} = \{\{\}\} $</li>
+					<li class="fragment">$ 2 = \{0; 1\} = \{\{\}; \{\{\}\}\} $</li>
+					<li class="fragment">$ \vdots $</li>
+					<li class="fragment">$ n = \{0; 1; \ldots ; n - 1\} $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen nach von Neumann</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">$ ord(n) =
+						\begin{cases}
+						\{\}       & \quad \text{wenn } n = 0\\
+						ord(n - 1) \cup \{ord(n - 1)\}  & \quad \text{wenn } n \ne 0
+						\end{cases}
+					$</li>
+					<li class="fragment"><pre><code data-trim class="scheme">
+						(define (ord n)
+						  (if (= n 0) '()
+						    (append
+						      (ord (- n 1))
+						      (list (ord (- n 1)))
+						)))
+					</code></pre></li>
+					<li class="fragment">Anzahl der Mengen: $ 2^n $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Hilberts Hotel</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment"></li>
+					<li class="fragment"></li>
+				</ul>
+			</section>
+		</div>
+	</div>
+	<script src="reveal.js/js/reveal.js"></script>
+	<script src="reveal.js/plugin/math/math.js"></script>
+	<script src="reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			plugins: [RevealMath, RevealHighlight]
+		});
+	</script>
+</body>
+</html>
