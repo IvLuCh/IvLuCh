@@ -64,25 +64,64 @@
 			</section>
 			<section data-auto-animate>
 				<h3 data-id="fib-h3-1">Peano-Axinome</h3>
-				<ul style="list-style-type:none;float:left;">
-					<li class="fragment"></li>
-					<li class="fragment"></li>
+				<ul style="list-style-type: none;float: left;">
+					<li class="fragment">Axinom: grundlegende Aussage, die als gegeben angesehen wird</li>
+					<li class="fragment">Peano hat die Menge der Natürlichen Zahlen definiert:</li>
+					<ul style="list-style-type: decimal;">
+						<li class="fragment">$ 0\in \mathbb {N} $</li>
+						<li class="fragment">$ \forall n(n\in \mathbb {N} \Rightarrow n'\in \mathbb {N} ) $</li>
+						<li class="fragment">$ \forall n(n\in \mathbb {N} \Rightarrow n'\not =0 ) $</li>
+						<li class="fragment">$ \forall n,m(n,m\in \mathbb {N} \Rightarrow (m'=n'\Rightarrow m=n)) $</li>
+						<li class="fragment">$ \forall X(0\in X\land \forall n(n\in \mathbb {N} \Rightarrow (n\in X\Rightarrow n'\in X))\Rightarrow \mathbb {N} \subseteq X) $</li>
+					</ul>
 				</ul>
 			</section>
 			<section data-auto-animate>
-				<h3 data-id="fib-h3-1">IVEN</h3>
+				<h3 data-id="fib-h3-1">Ordinalzahlen</h3>
 				<ul style="list-style-type:none;float:left;">
-					<li class="fragment"></li>
-					<li class="fragment"></li>
+					<li class="fragment">„1 ist die <b>erste</b> &naturals;“</li>
+					<li class="fragment">Jede natürliche Zahl ist auch eine Ordinalzahl,</li>
+					<li class="fragment">die Ordinalzahlen gehen aber noch darüber hinaus.</li>
 				</ul>
 			</section>
 			<section data-auto-animate>
-				<h3 data-id="fib-h3-1">Allgemeine Besonderheiten</h3>
-				<img src="img/spiral.png" style="float:left;"></img>
-				<ul style="float:left; margin-top: 20px;">
-					<li style="font-size:30px;">Wachstumsverhältnisse in der Natur</li>
-					<li style="font-size:30px;">Anzahl v. Spiralen in Blättern u. Früchten<br />im Beispiel: 13 Rote u.
-						8 Grüne Spiralen</li>
+				<h3 data-id="fib-h3-1">Ordinalzahlen nach von Neumann</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Man nehme einfach alle Zahlen aus der Mathematik weg.</li>
+					<li class="fragment">Was bleibt übrig?</li>
+					<li class="fragment">Die leere Menge.</li>
+					<li class="fragment">$ 0 = \{\} $</li>
+					<li class="fragment">$ 1 = \{0\} = \{\{\}\} $</li>
+					<li class="fragment">$ 2 = \{0; 1\} = \{\{\}; \{\{\}\}\} $</li>
+					<li class="fragment">$ \vdots $</li>
+					<li class="fragment">$ n = \{0; 1; \ldots ; n - 1\} $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen nach von Neumann</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">$ ord(n) =
+						\begin{cases}
+						\{\}       & \quad \text{wenn } n = 0\\
+						ord(n - 1) \cup \{ord(n - 1)\}  & \quad \text{wenn } n \ne 0
+						\end{cases}
+					$</li>
+					<li class="fragment"><pre><code data-trim class="scheme">
+						(define (ord n)
+						  (if (= n 0) '()
+						    (append
+						      (ord (- n 1))
+						      (list (ord (- n 1)))
+						)))
+					</code></pre></li>
+					<li class="fragment">Anzahl der Mengen: $ 2^n $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Hilberts Hotel</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment"></li>
+					<li class="fragment"></li>
 				</ul>
 			</section>
 		</div>

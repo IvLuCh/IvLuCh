@@ -54,6 +54,8 @@ $$ (n \in \chi \Rightarrow n' \in \chi) $$
 
 # Hilberts Hotel & Probleme des Unendlichen
 
+* gerade <-> ungerade (Ludwig der Keko)
+
 # Ordinalzahlen
 
 „1 ist die **erste** &naturals;“  
