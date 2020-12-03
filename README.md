@@ -3,8 +3,8 @@
 ## Iven
 * Fibonacci
 * Goldener Schnitt
-* „Analoge Taschenrechner“
-<!--TODO: ivens themen lulw -->
+* Minimalfläche
+* Kürzeste Verbindungen im ein- & mehrdimensionalen Raum
 
 ## Ludwig
 * Collatz
