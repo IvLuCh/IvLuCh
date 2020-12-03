@@ -9,7 +9,7 @@ title: Heute wieder Notizen machen, gar kein Bock.
 Teilungsrest:
 $$ 3 / 2 = 1R1 $$
 &downarrow;
-$$ 3 \textrm{mod} 2 = 1 $$
+$$ 3\ \textrm{mod}\ 2 = 1 $$
 
 ## Kongruenz
 
