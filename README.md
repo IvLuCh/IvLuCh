@@ -4,7 +4,7 @@
 * Fibonacci
 * Goldener Schnitt
 * „Analoge Taschenrechner“
-<!--TODO: iven gönn dir noch nen thema-->
+<!--TODO: ivens themen lulw -->
 
 ## Ludwig
 * Collatz
@@ -12,8 +12,8 @@
 * Primzahlen
 * Riemann'sche Vermutung
 
-## Chris – Überthema: Unendlichkeit
+## Chris
 * modulo & Kongruenz
 * Hilberts Hotel & Probleme des Unendlichen
 * Ordinalzahlen
-<!--ich glaub ich brauch noch eins, right?-->
+* Peano-Axinome

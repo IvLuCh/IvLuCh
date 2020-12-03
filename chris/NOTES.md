@@ -2,8 +2,39 @@
 title: Heute wieder Notizen machen, gar kein Bock.
 ---
 
+# Basics
+
+## modulo
+
+Teilungsrest:
+$$ 3 / 2 = 1R1 $$
+&downarrow;
+$$ 3 \textrm{mod} 2 = 1 $$
+
+## Kongruenz
+
+Einfachere Schreibweise für
+
+$$ x\ \textrm{mod}\ n = y\ \textrm{mod}\ n $$
+
+$$ x \equiv y\ (\textrm{mod}\ n) $$
+
+## Summe
+
+$$ \sum_{n=k}^{m} f(n) = f(k) + f(k + 1) + ... + f(m) $$
+
+```c
+for(int n = k; n <= m; n++)
+```
+
+$$ \sum_{n=1}^{3} n = 6 $$
+
+$$ \sum_{n=1}^{\infty} 2^{-n} = 1 $$
+
 # Peano-Axinome
 Axinom: grundlegende Aussage, die als gegeben angesehen wird
+
+Peano hat die natürlichen Zahlen so definiert:
 
 1. $$ 0 \in \mathbb{N} $$
 
@@ -97,29 +128,3 @@ gilt: t &notin; &sigma;
 
 ich versteh des immer noch ned und find den englischen wikipedia
 eintrag auch nimmer
-
-# Basics
-
-## modulo
-
-Teilungsrest: 3 mod 2 = 1
-
-## Kongruenz
-
-Einfachere Schreibweise für
-
-$$ x\ \textrm{mod}\ n = y\ \textrm{mod}\ n $$
-
-$$ x \equiv y\ (\textrm{mod}\ n) $$
-
-## Summe
-
-$$ \sum_{n=k}^{m} f(n) = f(k) + f(k + 1) + ... + f(m) $$
-
-```c
-for(int n = k; n <= m; n++)
-```
-
-$$ \sum_{n=1}^{3} n = 6 $$
-
-$$ \sum_{n=1}^{\infty} 2^{-n} = 1 $$
