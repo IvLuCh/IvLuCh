@@ -2,6 +2,16 @@
 title: Heute wieder Notizen machen, gar kein Bock.
 ---
 
+# Hilberts Hotel & Probleme des Unendlichen
+
+* TODO: gerade <-> ungerade (Ludwig der Keko)
+
+* bekanntes Setup (zeichnen lulw)
+* abzählbar unendlich viele Gäste können kommen
+* abzählbar undendlich: mächtigkeit = aleph\_0
+* viele möglichkeiten: zimmernummer * 2, …
+* problem: dauert unendlich lang, wenn nicht gleichzeitig
+
 # Basics
 
 ## modulo
@@ -51,10 +61,6 @@ $$ \forall \chi (0 \in \chi) $$ und
 $$ (n \in \chi \Rightarrow n' \in \chi) $$
 
 5. $$ \chi \subseteq \mathbb{N} $$
-
-# Hilberts Hotel & Probleme des Unendlichen
-
-* gerade <-> ungerade (Ludwig der Keko)
 
 # Ordinalzahlen
 
