@@ -1,37 +1,70 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Ludwig</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="reveal.js/css/reset.css">
-		<link rel="stylesheet" href="reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
-		<link rel="dns-prefetch" href="img/collatz-img-1-10000.png">
-		<link rel="dns-prefetch" href="img/collatz-img-1-100000.png">
-		<link rel="dns-prefetch" href="img/collatz-img-1-1000000.png">
-		<link rel="dns-prefetch" href="img/collatz-img-2-10000.png">
-		<link rel="dns-prefetch" href="img/collatz-img-2-100000.png">
-		<link rel="dns-prefetch" href="img/collatz-img-2-1000000.png">
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
-	</head>
-	<body>
-		<style>
-			li {
-				font-size:25px;
-			}
-			.row {
-				display: flex;
-				flex-wrap: wrap;
-				padding: 0 4px;
-			}
-		</style>
-		<div class="reveal">
-			<div class="slides">
-				<section data-auto-animate>
+	<title>Iven ist ein Kek</title>
+
+	<link rel="stylesheet" href="reveal.js/css/reset.css">
+	<link rel="stylesheet" href="reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<style>
+		li {
+			font-size: 23px;
+		}
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 4px;
+		}
+	</style>
+	<div class="reveal">
+		<div class="slides">
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Modulo</h3>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Modulo</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Teilungsrest: $ 3 : 2 = 1\textrm{R}1 $</li>
+					<li class="fragment">$ 3\ \textrm{mod}\ 2 = 1 $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Kongruenz</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Ausführlich: $ x\ \textrm{mod}\ n = y\ \textrm{mod}\ n $</li>
+					<li class="fragment">$ x \equiv y\ (\textrm{mod}\ n) $</li>
+					<li class="fragment">$ 3 \equiv 5\ (\textrm{mod}\ 2) $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Summe</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Ausführlich: $ f(k) + f(k + 1) + \ldots + f(m) $</li>
+					<li class="fragment">
+						<pre><code data-trim class="c">
+						for(int n = k; n &lt;= m; n++)
+					</code></pre>
+					</li>
+					<li class="fragment">$ \sum\limits_{n=k}^{m} f(n) $</li>
+					<li class="fragment">$ \sum\limits_{n=1}^{3} n = 1 + 2 + 3 = 6 $</li>
+					<li class="fragment">$ \sum\limits_{n=1}^{\infty} 2^{-n}
+						= \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \ldots = 1 $</li>
+				</ul>
+			</section>
+
+
+
+        <section data-auto-animate>
 					<h3 data-id="collatz-h3-1">Collatz-Problem</h3>
 				</section>
 				<section data-auto-animate>
@@ -83,9 +116,66 @@
 					</ul>
 				</section>
 
-				<!-- THEMENWECHSEL -->
+
 
 				<section data-auto-animate>
+					<h3 data-id="min-surface-h3-1">Minimalflächen und kürzest mögliche Verbindungen</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="min-surface-h3-1">Im Eindimensionalen</h3>
+					<img src="img/TrSchemabea.jpg" height="200" style="float:left"></img>
+					<ul style="float:left; margin-top: 15px;">
+						<li class="fragment">Verbindungen in einem PC Prozessor $\rightarrow$ Seifenfilm Computer</li>
+						<li class="fragment">Hergestellt aus Plexiglasplatten, Zahnstochern und Seifenlösung</li>
+						<li class="fragment">Ergebnis: Seifenlamellen spannen sich in kürzest<br/>möglicher Verbindung von Zahnstocher zu Zahnstocher.</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="min-surface-h3-1">Im Mehrdimensionalen</h3>
+					<img src="img/Seifenblase.png" height="200" style="float:left;"></img>
+					<ul style="float:left; margin-top: 15px;">
+						<li class="fragment">Die ebene Fläche hat im rechteckigen Rahmen<br/>den kleinsten Flächeninhalt (Minimalfläche)</li>
+						<li class="fragment">ABER: Nicht alle Minimalflächen müssen<br/>eben sein (Seifenblase)</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="min-surface-h3-1">Der vierdimensionale Würfel</h3>
+					<img src="img/4-dim-cube.png" height="250" style="float:left;"></img>
+					<ul style="float:left; margin-top: 15px;">
+						<li class="fragment">„Würfel“ in der 1. Dimension: Linie</li>
+						<li class="fragment">„Würfel“ in der 2. Dimension: Quadrat</li>
+						<li class="fragment">Würfel in der 3. Dimension: richtiger Würfel</li>
+						<li class="fragment">„Würfel“ in der 4.Dimension: Tesserakt oder Hyperwürfel</li>
+						<li class="fragment">Entsteht durch Verdopplung des Würfels und<br/>die Verbindung seiner Eckpunkte</li>
+					</ul>
+				</section>
+
+      <section data-auto-animate>
+				<h3 data-id="fib-h3-1">Hilberts Hotel</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Gedankenexperiment zur Veranschaulichung der Unendlichkeit</li>
+					<li class="fragment">Ein Hotel mit unendlich vielen Zimmern</li>
+					<li class="fragment">hat unendlich viele Gäste.</li>
+					<li class="fragment">$ \mid \mathbb{N} \mid = \aleph_0 $</li>
+					<li class="fragment">„Abzählbare Unendlichkeit“</li>
+					<li class="fragment">Wenn <b>abzählbar</b> unendlich viele neue Gäste dazukommen,</li>
+					<li class="fragment">können sie unterkommen</li>
+					<li class="fragment">und das geht auf viele verschiedene Weisen.</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Neue Gäste in Hilberts Hotel</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Beispielsweise: Jeder Gast verdoppelt seine Zimmernummer</li>
+					<li class="fragment">Das alles muss aber genau gleichzeitig passieren,</li>
+					<li class="fragment">nicht um auch nur eine Nanosekunde verzögert.</li>
+					<li class="fragment">Denn wäre es verzögert, würde es unendlich lange dauern.</li>
+					<li class="fragment">→ Bei etwas Unendlichem kommt immer etwas Unendliches heraus.</li>
+				</ul>
+			</section>
+
+
+      <section data-auto-animate>
 					<h3 data-id="prob0-h3-1">Probleme mit 0</h3>
 				</section>
 				<section data-auto-animate>
@@ -185,9 +275,152 @@
 					</p>
 				</section>
 
-				<!-- THEMENWECHSEL -->
-				
+
+        <section data-auto-animate>
+					<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
+				</section>
 				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
+					<ul>
+						<li class="fragment">Namensgeber: Leonardo von Pisa (1170-1240), gennant Fibonacci</li>
+						<li class="fragment">Beschrieb mit ihr 1202 das Wachstum einer Kaninchenpopulation
+							\[ \{(0);\,1;\,1;\,2;\,3;\,5;\,8;\,13;\,21;\,24;\,55;\,89;\,...\} \]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Mathematische Besonderheiten</h3>
+					<ul style="list-style-type:none;">
+						<li class="fragment">Allgemein gilt
+							\[ a_{n+1} = a_n + a_{n-1} \]
+						</li>
+						<li class="fragment">Die Summe zweier aufeinanderfolgender Zahlen ergibt die unmittelbar danach folgende Zahl
+							\[ 0+1=1;\,1+1=2;\,1+2=3;\,2+3=5;\,3+5=8;\,... \]
+						</li>
+						<li class="fragment">Die Summe der Quadrate zweier benachbarter Fibonacci-Zahlen ist ebenfalls eine Fibonacci-Zahl
+							\[2^2 + 3^2 = 13;\, 13^2 + 21^2 = 610\]
+						</li>
+						<li class="fragment">Der Quotient zweier, aufeinanderfolgender Zahlen nähert sich dem Goldenen Schnitt an.
+							\[ \frac{13}{8}=1,6250;\, \frac{21}{13}=1,61538461538\approx\Phi \]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3>Der Goldene Schnitt</h3>
+					<ul>
+						<li class="fragment">Wird als schön empfunden</li>
+						<li class="fragment">Beschreibt das Teilungsverhältnis einer bestimmten Strecke
+							\[ \frac{a}{a+b} = \frac{b}{a} \]
+						</li>
+						<li class="fragment">Irrationaler Zahlenwert $\Phi$ des Goldenen Schnitts ($\approx 1,6180$)</li>
+						<li class="fragment">Verbindung zu Fibonacci: Quotient zweier aufeinanderfolgender Zahlen nähert sich $\Phi$ an
+							\[ \frac{13}{8} = 1,625;\, \frac{89}{55} = 1,6181;\]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Wachstumsvorgänge in der Natur</h3>
+					<img src="img/spiral.png" style="float:left;"></img>
+					<ul style="list-style: none; float:left; margin-top: 20px;">
+						<li style="font-size: 28px;" class="fragment">Anzahl v. Spiralen in Blättern u. Früchten<br/>im Beispiel: 13 Rote u. 8 Grüne Spiralen</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Wachstumsvorgänge in der Natur</h3>
+					<img src="img/nautilus.jpg" height="200px" style="float:left;"></img>
+					<ul style="list-style-type:none; float:left; margin-top: 20px;">
+						<li style="font-size: 28px;" class="fragment">Die Spirale des Nautilus (logarithmische Spirale):<br/>
+							Quadrate, die das Wachstum beschreiben,<br/>setzen sich aus der Summe ihrer<br/>Vorgänger zusammen. (Selbstähnlich)
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Logarithmische Spirale</h3>
+					<ul>
+						<li class="fragment">Durch den Pol laufende Geraden schneiden die Kurve unter dem gleichen Tangentenwinkel.</li>
+						<li class="fragment">Die Spirale umkreist den Ursprung unendlich oft.</li>
+						<li class="fragment">Jede Windung wächst um einen konstanten Faktor.</li>
+						<li class="fragment">Schema in Wirbelstürmen, Galaxien, etc.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Abschließende Frage</h3>
+					<p>Kann man mit der Mathematik die Natur beschrieben oder beschreibt die Natur die Mathematik?</p>
+				</section>
+			</div>
+
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Peano-Axinome</h3>
+				<ul style="list-style-type: none;float: left;">
+					<li class="fragment">Axinom: grundlegende Aussage, die als gegeben angesehen wird</li>
+					<li class="fragment">Peano hat die Menge der Natürlichen Zahlen definiert:</li>
+					<ul style="list-style-type: decimal;">
+						<li class="fragment">$ 0\in \mathbb {N} $</li>
+						<li class="fragment">$ \forall n(n\in \mathbb {N} \Rightarrow n'\in \mathbb {N} ) $</li>
+						<li class="fragment">$ \forall n(n\in \mathbb {N} \Rightarrow n'\not =0 ) $</li>
+						<li class="fragment">$ \forall n,m(n,m\in \mathbb {N} \Rightarrow (m'=n'\Rightarrow m=n)) $</li>
+						<li class="fragment">$ \forall X(0\in X\land \forall n(n\in \mathbb {N} \Rightarrow (n\in
+							X\Rightarrow n'\in X))\Rightarrow \mathbb {N} \subseteq X) $</li>
+					</ul>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">„1 ist die <b>erste</b> &naturals;“</li>
+					<li class="fragment">Jede natürliche Zahl ist auch eine Ordinalzahl,</li>
+					<li class="fragment">die Ordinalzahlen gehen aber noch darüber hinaus.</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen nach von Neumann</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Man nehme einfach alle Zahlen aus der Mathematik weg.</li>
+					<li class="fragment">Was bleibt übrig?</li>
+					<li class="fragment">Die leere Menge.</li>
+					<li class="fragment">$ 0 = \{\} $</li>
+					<li class="fragment">$ 1 = \{0\} = \{\{\}\} $</li>
+					<li class="fragment">$ 2 = \{0; 1\} = \{\{\}; \{\{\}\}\} $</li>
+					<li class="fragment">$ \vdots $</li>
+					<li class="fragment">$ n = \{0; 1; \ldots ; n - 1\} $</li>
+				</ul>
+			</section>
+
+
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Ordinalzahlen nach von Neumann</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">$ ord(n) =
+						\begin{cases}
+						\{\} & \quad \text{wenn } n = 0\\
+						ord(n - 1) \cup \{ord(n - 1)\} & \quad \text{wenn } n \ne 0
+						\end{cases}
+						$</li>
+					<li class="fragment">
+						<pre><code data-trim class="scheme">
+						(define (ord n)
+						  (if (= n 0) '()
+						    (append
+						      (ord (- n 1))
+						      (list (ord (- n 1)))
+						)))
+					</code></pre>
+					</li>
+					<li class="fragment">Anzahl der Mengen: $ 2^n $</li>
+				</ul>
+			</section>
+			<section data-auto-animate>
+				<h3 data-id="fib-h3-1">Transfinite Ordinalzahlen</h3>
+				<ul style="list-style-type:none;float:left;">
+					<li class="fragment">Die Ordinalzahlen gehen über die Natürlichen Zahlen hinaus.</li>
+					<li class="fragment">$ \omega = \mathbb{N} $</li>
+					<li class="fragment"></li>
+					<li class="fragment"></li>
+					<li class="fragment"></li>
+				</ul>
+			</section>
+
+<section data-auto-animate>
 					<h3 data-id="primes-h3-1">Primzahlen</h3>
 				</section>
 				<section data-auto-animate>
@@ -375,20 +608,24 @@
 						</li>
 					</ul>
 				</section>
-			</div>
+
+			
 		</div>
-		<script src="reveal.js/js/reveal.js"></script>
-		<script src="reveal.js/plugin/math/math.js"></script>
-		<script>
-			Reveal.initialize({
-    			math: {
-      				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
-      				config: 'TeX-AMS_HTML-full',
-      				// pass other options into `MathJax.Hub.Config()`
-      				TeX: { Macros: { RR: "{\\bf R}" } }
-    			},
-    			plugins: [ RevealMath ]
-  			});
-		</script>
-	</body>
+	</div>
+	<script src="reveal.js/js/reveal.js"></script>
+	<script src="reveal.js/plugin/math/math.js"></script>
+	<script src="reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		Reveal.initialize({
+			math: {
+				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+				config: 'TeX-AMS_HTML-full',
+				// pass other options into `MathJax.Hub.Config()`
+				TeX: { Macros: { RR: "{\\bf R}" } }
+			},
+			plugins: [RevealMath, RevealHighlight]
+		});
+	</script>
+</body>
+
 </html>
