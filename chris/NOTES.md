@@ -11,6 +11,7 @@ title: Heute wieder Notizen machen, gar kein Bock.
 * abzählbar undendlich: mächtigkeit = aleph\_0
 * viele möglichkeiten: zimmernummer * 2, …
 * problem: dauert unendlich lang, wenn nicht gleichzeitig
+* → unendlich bleibt unendlich und ist unendlich
 
 # Basics
 
