@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Ludwig</title>
+
+		<link rel="stylesheet" href="reveal.js/css/reset.css">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<style>
+			li {
+				font-size:25px;
+			}
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				padding: 0 4px;
+			}
+			.column {
+				flex: 50%;
+				padding: 0 4px;
+			}
+		</style>
+		<div class="reveal">
+			<div class="slides">
+				<section data-auto-animate>
+					<h3 data-id="collatz-h3-1">Collatz-Problem</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="collatz-h3-1">Ablauf</h3>
+					<ul style="list-style-type: none;">
+						<li>Suche dir eine zufällige Zahl $n \in \mathbb{N} \setminus \{0\}$</li>
+						<ol>
+							<div class="fragment">
+								<li>Wenn $n \textrm{ mod } 2 = 0 \longrightarrow n$ nimmt $\frac{n}{2}$ an</li>
+								<li>Wenn $n \textrm{ mod } 2 = 1 \longrightarrow n$ nimmt $3n + 1$ an</li>
+							</div>
+							<li class="fragment">Vorgang wiederholen</li>
+						</ol>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="collatz-h3-1">Beispiele</h3>
+					<ul style="list-style-type: none;">
+						<li>$5 \rightarrow 16 \rightarrow 8 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \, ... $</li>
+						<li>$8 \rightarrow 4 \rightarrow 2 \rightarrow 1 \rightarrow 4 \rightarrow \, ...$</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="collatz-h3-1">Folgerung</h3>
+					<ul>
+						<li class="fragment">Jede mögliche Zahl $n \in \mathbb{N} \setminus \{1\}$ endet im Folgeschema $4 \rightarrow 2 \rightarrow 1 \rightarrow \, ...$</li>
+						<li class="fragment"><b>Problem:</b> nicht bewiesen</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="collatz-h3-1">Statistiken</h3>
+					<div class="row">
+						<img src="img/collatz-img-1-10000.png" height="200">
+						<img src="img/collatz-img-1-100000.png" height="200">
+						<img src="img/collatz-img-1-1000000.png" height="200">
+					</div>
+					<div class="row">
+						<img src="img/collatz-img-2-10000.png" height="200">
+						<img src="img/collatz-img-2-100000.png" height="200">
+						<img src="img/collatz-img-2-1000000.png" height="200">
+					</div>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="collatz-h3-1">Collatz-Graphen</h3>
+					<ul>
+						<li class="fragment">$f: \mathbb{N} \mapsto \mathbb{N}$ bildet den Collatz-Graphen einer zahlentheoretischen Funktion ab.</li>
+						<li class="fragment">Nachfolgerabbildung:
+							\[s: \mathbb{N} \mapsto \mathbb{N}; \, s(n) = n + 1\]</li>
+					</ul>
+				</section>
+
+				<!-- THEMENWECHSEL -->
+
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">Probleme mit 0</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">Teilen durch 0</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">Teilen durch 0</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						\lim\limits_{\underset{x < 0}{x \to 0}} \frac{n}{x} &= - \infty \\
+						\lim\limits_{\underset{x > 0}{x \to 0}} \frac{n}{x} &= + \infty \\
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">Teilen durch 0</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						\lim\limits_{\underset{x < 0}{x \to 0}} \frac{n}{x} &= - \infty \\
+						\lim\limits_{\underset{x > 0}{x \to 0}} \frac{n}{x} &= + \infty \\
+						\lim\limits_{\underset{x < 0}{x \to 0}} \frac{n}{x} &\neq \lim\limits_{\underset{x > 0}{x \to 0}} \frac{n}{x}				\\
+						- \infty &\neq + \infty	
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">Teilen durch 0</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						\lim\limits_{\underset{x < 0}{x \to 0}} \frac{n}{x} &= - \infty \\
+						\lim\limits_{\underset{x > 0}{x \to 0}} \frac{n}{x} &= + \infty \\
+						\lim\limits_{\underset{x < 0}{x \to 0}} \frac{n}{x} &\neq \lim\limits_{\underset{x > 0}{x \to 0}} \frac{n}{x}				\\
+						- \infty &\neq + \infty											\\
+						\Rightarrow \frac{n}{0} &= n. d.
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰ - Grenzwertbetrachtung</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						\lim\limits_{\underset{x > 0}{x \to 0}} x^x &= 1 \\
+						\lim\limits_{\underset{x < 0}{x \to 0}} x^x &= -1
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰ - Grenzwertbetrachtung</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						\lim\limits_{\underset{x > 0}{x \to 0}} x^x &= 1 \\
+						\lim\limits_{\underset{x < 0}{x \to 0}} x^x &= -1 \\
+						\lim\limits_{\underset{x > 0}{x \to 0}} x^x &\neq \lim\limits_{\underset{x < 0}{x \to 0}} \\
+						1 &\neq -1 \\
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰ - Grenzwertbetrachtung</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						\lim\limits_{\underset{x > 0}{x \to 0}} x^x &= 1 \\
+						\lim\limits_{\underset{x < 0}{x \to 0}} x^x &= -1 \\
+						\lim\limits_{\underset{x > 0}{x \to 0}} x^x &\neq \lim\limits_{\underset{x < 0}{x \to 0}} \\
+						1 &\neq -1 \\
+						\Rightarrow 0^0 &= n.d. \\
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰ - Reversibles potenzieren</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰ - Reversibles potenzieren</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						5^3 &= \frac{5^4}{5} = 5 \cdot 5 \cdot 5 = 125 	\\
+						5^2 &= \frac{5^3}{5} = 5 \cdot 5 = 25 			\\
+						5^1 &= \frac{5^2}{5} = 5 = 5 					\\
+						5^0 &= \frac{5}{5} = 1 							
+						\end{align*}
+					</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="prob0-h3-1">0⁰ - Reversibles potenzieren</h3>
+					<p data-id="proof-div-0" style="font-size: 22px;">
+						\begin{align*}
+						5^3 &= \frac{5^4}{5} = 5 \cdot 5 \cdot 5 = 125 	\\
+						5^2 &= \frac{5^3}{5} = 5 \cdot 5 = 25 			\\
+						5^1 &= \frac{5^2}{5} = 5 = 5 					\\
+						5^0 &= \frac{5}{5} = 1 							\\
+						0^0 &= \frac{0}{0} = n.d.
+						\end{align*}
+					</p>
+				</section>
+
+				<!-- THEMENWECHSEL -->
+				
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Primzahlen</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Definition</h3>
+					<ul style="list-style-type: none;">
+						<li>Für eine natürliche Zahl $N \in \mathbb{N} \setminus \{0\,;\,1\}$ gilt $N \in \mathbb{P}$, wenn für jede Zahl $n_j \in \mathbb{N} \setminus \{0\,;\,1\,;\,N\}$ gilt:
+							\[ N \textrm{ mod } n_j \neq 0\]</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Erschließung/Errechnung</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Mersennesche Zahlen</h3>
+					<ul style="list-style-type: none;">
+						<li>Für eine Zahl $N \in \mathbb{N}$ der Form
+							\[ N = 2^n - 1;\, n \in \mathbb{N}\]
+							kann $N \in \mathbb{P}$ nur dann gelten, wenn $n \in \mathbb{P}$ gilt.</li>
+						<li>$\Longrightarrow$ Zahlen der Form
+							\[ M_p := 2^p - 1; \, p \in \mathbb{P} \]
+							heißen $Mersennesche\,Zahlen$, die allerdings nicht zwingend Teil der Menge $\mathbb{P}$ sind.</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Beispiele für Mersennesche Primzahlen</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							\begin{align*}
+							M_2 &= 2^2 - 1 = 3		\\
+							M_3 &= 2^3 - 1 = 7		\\
+							M_5 &= 2^5 - 1 = 31		\\
+							M_7 &= 2^7 - 1 = 127	\\
+							\end{align*}
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Beispiele für Mersennesche Nicht-Primzahlen</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							\begin{align*}
+							M_{11} &= 2^{11} - 1 = 23 \cdot 89 = 2047			\\
+							M_{23} &= 2^{23} - 1 = 47 \cdot 178481 = 8388607
+							\end{align*}
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Fermatsche Zahlen</h3>
+					<ul style="list-style-type: none;">
+						<li>Für eine Zahl $N \in \mathbb{N}$ der Form
+							\[ N = 2^n + 1;\, n \in \mathbb{N} \]
+							kann $N \in \mathbb{P}$ nur gelten, wenn $n = 2^m;\, m \in \mathbb{N}$ gilt.</li>
+						<li>$\Longrightarrow$ Zahlen der Form
+							\[ F_n := 2^{2^n} + 1\]
+							heißen $Fermatsche\,Zahlen$, die allerdings nicht zwingend Teil der Menge $\mathbb{P}$ sind.</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Beispiele für Fermatsche Primzahlen</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							\begin{align*}
+							F_1 &= 2^{2^1} + 1 = 2^{2} + 1 = 5		\\
+							F_2 &= 2^{2^2} + 1 = 2^{4} + 1 = 17		\\
+							F_3 &= 2^{2^3} + 1 = 2^{8} + 1 = 257	\\
+							F_4 &= 2^{2^4} + 1 = 2^{16} + 1 = 65537	\\
+							\end{align*}
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Beispiele für Fermatsche Nicht-Primzahlen</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							\begin{align*}
+							F_5 &= 2^{32} + 1 = 641 \cdot 6700417 = 4294967297 \\
+							F_6 &= 2^{64} + 1 =  274177 \cdot 67280421310721 = 1,844674407 \cdot 10^{19}
+							\end{align*}
+						</li>
+					</ul>
+				</section>
+
+				<!-- THEMENWECHSEL -->
+				
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemannsche Vermutung</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Pifunktion</h3>
+					<ul style="list-style-type: none;">
+						<li>Die Pifunktion $\pi(x)$ beschreibt für $x_n$ die Anzahl an Primzahlen, die Teil des Intervalls $[0;\,x_n]$ sind.</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Pifunktion - Näherungen</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							\[ \frac{x}{\ln(x)} \]
+							\[ \textrm{li}(x) = \int\limits_{0}^{x} \frac{\textrm{d}\,t}{\textrm{ln}\,t} \]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Pifunktion - Näherungen</h3>
+					<img src="img/prime-counting.png">
+					<p class="fragment">asymptotisch äquivalent</p>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Primzetafunktion</h3>
+					<ul style="list-style-type: none;">
+						<li>Für eine Zahl $s \in \mathbb{C}; \textrm{Re}(s) > 1$ gilt:
+							\begin{align*}
+							P(s) &= \sum\limits_{p \in \mathbb{P}} \frac{1}{p^s} \\
+							P(s) &= \textrm{log}(\zeta(s))
+							\end{align*}
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemmansche Zetafunktion</h3>
+					<ul style="list-style-type: none;">
+						<li>Für alle $z \in \mathbb{C}$ mit $Re(z) > 1$ gilt
+							\[ \zeta(z) = \prod_{p \in \mathbb{P}} {\frac{1}{1 - \frac{1}{p^z}}}  = \sum_{n=1}^{\infty} \frac{1}{n^z}\]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemmansche Zetafunktion</h3>
+					<ul style="list-style-type: none;">
+						<li>Für alle $z \in \mathbb{C}$ mit $Re(z) > 1$ gilt
+							\[ \zeta(z) = \prod_{p \in \mathbb{P}} {\frac{1}{1 - \frac{1}{p^z}}}  = \sum_{n=1}^{\infty} \frac{1}{n^z}\]
+							$Beweisidee:$ Für eine feste Primzahl $p \in \mathbb{P}$ kann der Faktor in obigen Produkt in eine geometrische Reihe
+							\[ \frac{1}{1 - \frac{1}{p^s}} = \sum_{n=0}^{\infty} {\frac{1}{p^{nz}}} \]
+							entwickelt werden.
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemmansche Zetafunktion</h3>
+					<ul style="list-style-type: none;">
+						<li>$Beweisidee:$ Für eine feste Primzahl $p \in \mathbb{P}$ kann der Faktor in obigen Produkt in eine geometrische Reihe
+							\[ \frac{1}{1 - \frac{1}{p^s}} = \sum_{n=0}^{\infty} {\frac{1}{p^{nz}}} \]
+							entwickelt werden. Wenn also $p_1, p_2, ... p_n$ die ersten $n$ Primzahlen sind, so ist
+							
+							\begin{align*}
+							\prod_{k=1}^{n} {\frac{1}{1 - \frac{1}{{p_k}^z}}} &= \sum_{k_1=0}^{\infty} {\frac{1}{{p_1}^{k_1 z}}} \cdot \sum_{k_2=0}^{\infty} {\frac{1}{{p_2}^{k_2 z}}} \cdot\cdot\cdot \sum_{k_n=0}^{\infty} {\frac{1}{{p_n}^{k_n z}}} \\
+							&= \sum_{k_1=0}^{\infty} \cdot\cdot\cdot \sum_{k_n=0}^{\infty} \frac{1}{({p_1}^{k_1} \cdot\cdot\cdot {p_n}^{k_n})^z} \\
+							&= \cdot\cdot\cdot
+							\end{align*}
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemmansche Zetafunktion</h3>
+					<ul style="list-style-type: none;">
+						<li>Für alle $z \in \mathbb{C}$ mit $\textrm{Re}(z) < 0$ gilt
+							\[ \zeta(1-z) = \pi^{-z} \cdot 2^{1-z} \cdot \Gamma(z) \cdot\left(\frac{\pi z}{2}\right) \cdot \zeta(z) \]
+							Außerdem ist die $\Gamma(z)$ durch 
+							\[ \Gamma(z) = \lim\limits_{n \to \infty} \frac{n! \cdot n^z}{\prod\limits_{k=0}^{\infty} (z+k)} \]
+							definiert.
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Triviale Nullstellen</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							Triviale Nullstellen $N_j$ sind solche, für die $\textrm{Re}(N_j) < 0$, $\textrm{Im}(N_j) = 0$ und $N_j \textrm{ mod } 2 = 0$ gilt.
+						</li>
+						<li>
+							Komplexe Nullstellen $N_j$ sind solche, für die $\textrm{Re}(N_j) = \frac{1}{2}$ gilt.
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemannsche Zetafunktion</h3>
+					<img src="img/complex_zeta.jpg" height="450">
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="primes-h3-1">Riemannsche Vermutung</h3>
+					<ul style="list-style-type: none;">
+						<li>
+							$Es\,gibt\,keine\,Nullstellen\,anderer\,Art\,und\,alle\,nichttrivialen\\Nullstellen\,der\,Zetafunktion\,liegen\,auf\,einer\,Geraden\,parallel\\zur\,imaginären\,Achse.$
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+		<script src="reveal.js/js/reveal.js"></script>
+		<script src="reveal.js/plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({
+    			math: {
+      				mathjax: 'https://cdn.jsdelivr.net/gh/mathjax/mathjax@2.7.8/MathJax.js',
+      				config: 'TeX-AMS_HTML-full',
+      				// pass other options into `MathJax.Hub.Config()`
+      				TeX: { Macros: { RR: "{\\bf R}" } }
+    			},
+    			plugins: [ RevealMath ]
+  			});
+		</script>
+	</body>
+</html>

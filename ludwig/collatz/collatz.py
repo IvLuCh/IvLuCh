@@ -124,9 +124,9 @@ def print_usage():
 if __name__ == '__main__':
     if len(argv) == 1: print_usage()
     elif len(argv) == 2 and argv[1].lower() == 'template':
-        #for i in range(3, 10): 
+        #for i in range(3, 6): 
         #    collatz_diagram_step(10 ** i)
-        for i in range(3, 10): 
+        for i in range(3, 8): 
             collatz_amount_diagram_step(10 ** i)
     elif len(argv) == 4:
         error = False

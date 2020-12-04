@@ -27,44 +27,73 @@
 		</style>
 		<div class="reveal">
 			<div class="slides">
-					<section data-auto-animate>
-						<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
-					</section>
-					<section data-auto-animate>
-						<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
-						<ul>
-							<li class="fragment">Namensgeber: Leonardo von Pisa, gennant Fibonacci</li>
-							<li class="fragment">Beschrieb mit ihr 1202 das Wachstum einer Kaninchenpopulation</li>
-							<li class="fragment">Unendliche Folge natürlicher Zahlen 
-									\[\begin{align}
-									{0, 1, 1, 2, 3, 5, 8, 13, 21, 24, 55, 89, ...}
-									\end{align}\]
-							</li>
-						</ul>
-					</section>
-					<section data-auto-animate>
-						<h3 data-id="fib-h3-1">Mathematische Besonderheiten</h3>
-						<ul style="list-style-type:none;">
-							<li class="fragment">Die Summe zweier aufeinanderfolgender Zahlen ergibt die unmittelbar danach folgende Zahl
-									\[\begin{align}
-									0+1=1;1+1=2;1+2=3;2+3=5;3+5=8
-									\end{align}\]
-							</li>
-							<li class="fragment">Der Quotient zweier, aufeinanderfolgender Zahlen nähert sich dem goldenen Schnitt an.
-								\[\begin{align}
-								\frac{13}{8}=1,6250; \frac{21}{13}=1,61538461538\approx\Phi
-								\end{align}\]
-							</li>
-						</ul>
-					</section>
-					<section data-auto-animate>
-						<h3 data-id="fib-h3-1">Allgemeine Besonderheiten</h3>
-						<img src="img/spiral.png" style="float:left;"></img>
-						<ul style="float:left; margin-top: 20px;">
-							<li style="font-size:30px;">Wachstumsverhältnisse in der Natur</li>
-							<li style="font-size:30px;">Anzahl v. Spiralen in Blättern u. Früchten<br/>im Beispiel: 13 Rote u. 8 Grüne Spiralen</li>
-						</ul>
-					</section>
+				<section data-auto-animate>
+					<h3 data-id="min-surface-h3-1">Minimalflächen und kürzest mögliche Verbindungen</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Die Fibonacci Folge</h3>
+					<ul>
+						<li class="fragment">Namensgeber: Leonardo von Pisa, gennant Fibonacci</li>
+						<li class="fragment">Beschrieb mit ihr 1202 das Wachstum einer Kaninchenpopulation</li>
+						<li class="fragment">War aber wohl schon Indern und Griechen bekannt</li>
+						<li class="fragment">Unendliche Folge natürlicher Zahlen 
+							\[ \{(0);\,1;\,1;\,2;\,3;\,5;\,8;\,13;\,21;\,24;\,55;\,89;\,...\} \]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Mathematische Besonderheiten</h3>
+					<ul style="list-style-type:none;">
+						<li class="fragment">Allgemein gilt
+							\[ a_{n+1} = a_n + a_{n-1} \]
+						</li>
+						<li class="fragment">Die Summe zweier aufeinanderfolgender Zahlen ergibt die unmittelbar danach folgende Zahl
+							\[ 0+1=1;\,1+1=2;\,1+2=3;\,2+3=5;\,3+5=8;\,... \]
+						</li>
+						<li class="fragment">Die Summe der Quadrate zweier benachbarter Fiboncci-Zahlen ist ebenfalls eine Fibonacci-Zahl
+							\[2^2 + 3^2 = 13;\, 13^2 + 21^2 = 610\]
+						</li>
+						<li class="fragment">Der Quotient zweier, aufeinanderfolgender Zahlen nähert sich dem Goldenen Schnitt an.
+							\[ \frac{13}{8}=1,6250;\, \frac{21}{13}=1,61538461538\approx\Phi \]
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Der Goldene Schnitt</h3>
+					<ul>
+						<li class="fraction">Wird als schön empfunden</li>
+						<li class="fraction">Beschreibt das Teilungsverhältnis einer bestimmten Strecke
+							\[ \frac{a}{a+b} = \frac{b}{a} \]
+						</li>
+						<li class="fraction">Irrationaler Zahlenwert $\Phi$ des Goldenen Schnitts ($\approx 1,6180$)</li>
+						<li class="fraction">Verbindung zu Fibonacci: Quotient zweier aufeinanderfolgender Zahlen nähert sich $\Phi$ an
+							\[ \frac{13}{8} = 1,625;\, \frac{89}{55} = 1,6181;\]
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Wachstumsvorgänge in der Natur</h3>
+					<img src="img/spiral.png" style="float:top_left;"></img>
+					<img src="img/nautilus.jpg" height="200px" style="float:bottom_left;"></img>
+					<ul style="float:top_right; margin-top: 20px;">
+						<li class="fraction">Anzahl v. Spiralen in Blättern u. Früchten<br/>im Beispiel: 13 Rote u. 8 Grüne Spiralen</li>
+						<li class="fraction">Die Spirale des Nautilus (logarithmische Spirale):<br/>
+							Quadrate, die das Wachstum beschreiben,<br/>setzen sich aus der Summe ihrer Vorgänger zusammen. (Selbstähnlich)
+						</li>
+					</ul>
+				</section>
+				<section data-auto-animate>
+					<h3 data-id="fib-h3-1">Logarithmische Spirale</h3>
+					<ul>
+						<li class="fragment">Durch den Pol laufende Geraden schneiden die Kurve unter dem gleichen Tangentenwinkel.</li>
+						<li class="fragment">Die Spirale umkreist den Ursprung unendlich oft.</li>
+						<li class="fragment">Jede Windung wächst um einen konstanten Faktor.</li>
+						<li class="fragment">Schema in Wirbelstürmen, Galaxien, etc.</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 		<script src="reveal.js/js/reveal.js"></script>
