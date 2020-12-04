@@ -8,6 +8,5 @@
 * Fibonacci & Goldener Schnitt (Wayne)
 * Peano-Axinome (xx)
 * Ordinalzahlen (chrissx häußler)
-* Minimalfläche (Wofl)
 * Primzahlen (spiel)
 * Riemannsche Vermutung (buch)
